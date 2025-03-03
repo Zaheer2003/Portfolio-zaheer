@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#FBBF24', // Tailwind yellow-400
+                        'dark-bg': '#111111',
+                        'dark-text': '#dddddd',
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Smooth transitions for elements */
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+
+        /* Custom button hover styles */
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #FBBF24;
+            color: #111;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white font-sans transition-all">
+    <nav class="flex justify-between items-center p-6 bg-gray-800 shadow-lg rounded-lg mb-12">
+        <div class="text-2xl font-bold text-yellow-400">Mohamed Zaheer</div>
+        <ul class="flex space-x-6 text-lg">
+            <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+            <li><a href="skills.html" class="hover:text-yellow-400">Skills</a></li>
+            <li><a href="projects.html" class="hover:text-yellow-400">Projects</a></li>
+            <li><a href="education.html" class="hover:text-yellow-400">Education</a></li>
+            <li><a href="certificates.html" class="hover:text-yellow-400">Certificates</a></li>
+            <li><a href="contact.html" class="hover:text-yellow-400">Contact</a></li>
+        </ul>
+        <button id="mode-toggle"
+            class="p-2 bg-gray-700 rounded-lg text-white transition-all hover:bg-gray-600 text-lg">🌙 Light Mode</button>
+    </nav>
+
+    <main class="text-center py-16 px-6">
+        <div class="flex flex-col items-center">
+            <img src="my-pic.jpg" alt="Your Profile Picture" class="w-40 h-40 rounded-full shadow-2xl border-4 border-gray-700 mb-6">
+            <h2 class="text-4xl font-semibold mb-2">Mohamed Zaheer</h2>
+            <p class="text-xl text-gray-400 mt-2">Full-Stack Developer | UI/UX Designer</p>
+            <p class="mt-4 max-w-2xl text-gray-300 mb-6">
+                Welcome to my portfolio! I specialize in creating amazing web applications and have a passion for coding.
+                Let's bring your ideas to life.
+            </p>
+
+            <!-- Button container with icons -->
+            <div class="flex space-x-4 justify-center mt-6">
+                <!-- View Projects Button with Icon -->
+                <a href="projects.html"
+                    class="bg-yellow-400 text-black py-3 px-8 rounded-lg text-xl font-semibold transition-all hover:bg-yellow-500 flex items-center space-x-2">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>View Projects</span>
+                </a>
+
+                <!-- Contact Me Button with Icon -->
+                <a href="contact.html"
+                    class="bg-gray-700 text-white py-3 px-8 rounded-lg text-xl font-semibold transition-all hover:bg-gray-600 flex items-center space-x-2">
+                    <i class="fas fa-user"></i>
+                    <span>Contact Me</span>
+                </a>
+
+                <!-- Download CV Button with Icon -->
+                <a href="cv.pdf" download
+                    class="bg-blue-600 text-white py-3 px-8 rounded-lg text-xl font-semibold transition-all hover:bg-blue-500 flex items-center space-x-2">
+                    <i class="fas fa-file-download"></i>
+                    <span>Download CV</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Social Media Icons -->
+    <footer class="bg-gray-800 text-center py-6 mt-12">
+        <div class="flex justify-center space-x-8">
+            <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="text-2xl hover:text-yellow-400">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/your-github" target="_blank" class="text-2xl hover:text-yellow-400">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/your-instagram" target="_blank" class="text-2xl hover:text-yellow-400">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <p class="text-gray-400 mt-4">&copy; 2025 Mohamed Zaheer | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        const toggleButton = document.getElementById('mode-toggle');
+        let isLightMode = localStorage.getItem("theme") === "light";
+
+        // Initial theme setup
+        if (isLightMode) {
+            document.body.classList.add("bg-white", "text-black");
+            document.body.classList.remove("bg-gray-900", "text-white");
+            toggleButton.textContent = "🌞 Dark Mode";
+        }
+
+        // Toggle between dark and light modes
+        toggleButton.addEventListener('click', () => {
+            isLightMode = !isLightMode;
+            if (isLightMode) {
+                document.body.classList.add("bg-white", "text-black");
+                document.body.classList.remove("bg-gray-900", "text-white");
+                toggleButton.textContent = "🌞 Dark Mode";
+                localStorage.setItem("theme", "light");
+            } else {
+                document.body.classList.add("bg-gray-900", "text-white");
+                document.body.classList.remove("bg-white", "text-black");
+                toggleButton.textContent = "🌙 Light Mode";
+                localStorage.setItem("theme", "dark");
+            }
+        });
+    </script>
+</body>
+
+</html>

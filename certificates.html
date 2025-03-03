@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <nav class="flex justify-between items-center p-6 bg-gray-800 shadow-lg">
+        <div class="text-2xl font-bold">Mohamed Zaheer</div>
+        <ul class="flex space-x-6">
+            <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+            <li><a href="skills.html" class="hover:text-yellow-400">Skills</a></li>
+            <li><a href="projects.html" class="hover:text-yellow-400">Projects</a></li>
+            <li><a href="education.html" class="hover:text-yellow-400">Education</a></li>
+            <li><a href="certificates.html" class="hover:text-yellow-400">Certificates</a></li>
+            <li><a href="contact.html" class="hover:text-yellow-400">Contact</a></li>
+        </ul>
+        <button id="mode-toggle" class="p-2 bg-gray-700 rounded-lg text-white transition-all hover:bg-gray-600">🌙 Light Mode</button>
+    </nav>
+
+    <main class="text-center py-16">
+        <h2 class="text-3xl font-bold">Certificates</h2>
+        <p class="text-gray-400 mt-2">Here are some of my certifications that showcase my expertise.</p>
+
+        <section class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Certificate 1 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                <div class="flex items-center space-x-4 mb-4">
+                    <i class="fas fa-certificate text-yellow-400 text-3xl"></i>
+                    <h3 class="text-xl font-bold">Certificate 1</h3>
+                </div>
+                <p class="text-gray-400">Description of Certificate 1. It demonstrates proficiency in [specific skill/field].</p>
+                <a href="#" class="text-yellow-400 hover:underline">View Certificate</a>
+            </div>
+            
+            <!-- Certificate 2 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                <div class="flex items-center space-x-4 mb-4">
+                    <i class="fas fa-briefcase text-yellow-400 text-3xl"></i>
+                    <h3 class="text-xl font-bold">Certificate 2</h3>
+                </div>
+                <p class="text-gray-400">Description of Certificate 2. This certifies expertise in [specific area or technology].</p>
+                <a href="#" class="text-yellow-400 hover:underline">View Certificate</a>
+            </div>
+            
+            <!-- Certificate 3 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                <div class="flex items-center space-x-4 mb-4">
+                    <i class="fas fa-laptop-code text-yellow-400 text-3xl"></i>
+                    <h3 class="text-xl font-bold">Certificate 3</h3>
+                </div>
+                <p class="text-gray-400">Description of Certificate 3. A qualification in programming and software development.</p>
+                <a href="#" class="text-yellow-400 hover:underline">View Certificate</a>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                <div class="flex items-center space-x-4 mb-4">
+                    <i class="fas fa-cloud text-yellow-400 text-3xl"></i>
+                    <h3 class="text-xl font-bold">Certificate 4</h3>
+                </div>
+                <p class="text-gray-400">This certificate showcases knowledge in Cloud Computing, including platforms like AWS and Azure.</p>
+                <a href="#" class="text-yellow-400 hover:underline">View Certificate</a>
+            </div>
+
+            <!-- Certificate 5 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                <div class="flex items-center space-x-4 mb-4">
+                    <i class="fas fa-chart-line text-yellow-400 text-3xl"></i>
+                    <h3 class="text-xl font-bold">Certificate 5</h3>
+                </div>
+                <p class="text-gray-400">This certification highlights my expertise in Data Analysis and Big Data Analytics.</p>
+                <a href="#" class="text-yellow-400 hover:underline">View Certificate</a>
+            </div>
+
+            <!-- Certificate 6 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                <div class="flex items-center space-x-4 mb-4">
+                    <i class="fas fa-robot text-yellow-400 text-3xl"></i>
+                    <h3 class="text-xl font-bold">Certificate 6</h3>
+                </div>
+                <p class="text-gray-400">This certificate focuses on Artificial Intelligence and Machine Learning fundamentals.</p>
+                <a href="#" class="text-yellow-400 hover:underline">View Certificate</a>
+            </div>
+        </section>
+    </main>
+    <script>
+        const toggleButton = document.getElementById('mode-toggle');
+        let isLightMode = localStorage.getItem("theme") === "light";
+
+        if (isLightMode) {
+            document.body.classList.add("bg-white", "text-black");
+            document.body.classList.remove("bg-gray-900", "text-white");
+            toggleButton.textContent = "🌞 Dark Mode";
+        }
+
+        toggleButton.addEventListener('click', () => {
+            isLightMode = !isLightMode;
+            if (isLightMode) {
+                document.body.classList.add("bg-white", "text-black");
+                document.body.classList.remove("bg-gray-900", "text-white");
+                toggleButton.textContent = "🌞 Dark Mode";
+                localStorage.setItem("theme", "light");
+            } else {
+                document.body.classList.add("bg-gray-900", "text-white");
+                document.body.classList.remove("bg-white", "text-black");
+                toggleButton.textContent = "🌙 Light Mode";
+                localStorage.setItem("theme", "dark");
+            }
+        });
+    </script>
+</body>
+</html>

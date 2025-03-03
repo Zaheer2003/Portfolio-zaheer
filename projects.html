@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Mohamed Zaheer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white font-sans">
+    <nav class="flex justify-between items-center p-6 bg-gray-800 shadow-lg">
+        <div class="text-2xl font-bold text-yellow-400">Mohamed Zaheer</div>
+        <ul class="flex space-x-6 text-lg">
+            <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+            <li><a href="skills.html" class="hover:text-yellow-400">Skills</a></li>
+            <li><a href="projects.html" class="hover:text-yellow-400">Projects</a></li>
+            <li><a href="education.html" class="hover:text-yellow-400">Education</a></li>
+            <li><a href="certificates.html" class="hover:text-yellow-400">Certificates</a></li>
+            <li><a href="contact.html" class="hover:text-yellow-400">Contact</a></li>
+        </ul>
+        <button id="mode-toggle"
+            class="p-2 bg-gray-700 rounded-lg text-white transition-all hover:bg-gray-600 text-lg">🌙 Light Mode</button>
+    </nav>
+
+    <main class="text-center py-16 px-6">
+        <h2 class="text-3xl font-bold mb-8 text-yellow-400">Projects</h2>
+        <section class="mt-10 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Project 1 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:scale-105 transform transition-all">
+                <img src="project1.jpg" alt="Project 1" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-bold mb-2">Project 1</h3>
+                <p class="text-gray-400 mb-4">Description of Project 1. This is a short overview of the project’s main
+                    features.</p>
+                <a href="#" class="text-yellow-400 hover:underline font-semibold">View Project</a>
+            </div>
+            <!-- Project 2 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:scale-105 transform transition-all">
+                <img src="project2.jpg" alt="Project 2" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-bold mb-2">Project 2</h3>
+                <p class="text-gray-400 mb-4">Description of Project 2. This project involves cutting-edge technology
+                    and efficient design principles.</p>
+                <a href="#" class="text-yellow-400 hover:underline font-semibold">View Project</a>
+            </div>
+            <!-- Project 3 (Example) -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:scale-105 transform transition-all">
+                <img src="project3.jpg" alt="Project 3" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-bold mb-2">Project 3</h3>
+                <p class="text-gray-400 mb-4">Description of Project 3. This project emphasizes user experience and
+                    accessibility.</p>
+                <a href="#" class="text-yellow-400 hover:underline font-semibold">View Project</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-center py-6 mt-12">
+        <p class="text-gray-400">&copy; 2025 Mohamed Zaheer | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        const toggleButton = document.getElementById('mode-toggle');
+        let isLightMode = localStorage.getItem("theme") === "light";
+
+        if (isLightMode) {
+            document.body.classList.add("bg-white", "text-black");
+            document.body.classList.remove("bg-gray-900", "text-white");
+            toggleButton.textContent = "🌞 Dark Mode";
+        }
+
+        toggleButton.addEventListener('click', () => {
+            isLightMode = !isLightMode;
+            if (isLightMode) {
+                document.body.classList.add("bg-white", "text-black");
+                document.body.classList.remove("bg-gray-900", "text-white");
+                toggleButton.textContent = "🌞 Dark Mode";
+                localStorage.setItem("theme", "light");
+            } else {
+                document.body.classList.add("bg-gray-900", "text-white");
+                document.body.classList.remove("bg-white", "text-black");
+                toggleButton.textContent = "🌙 Light Mode";
+                localStorage.setItem("theme", "dark");
+            }
+        });
+    </script>
+</body>
+
+</html>

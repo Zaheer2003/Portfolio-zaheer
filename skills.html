@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Mohamed Zaheer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .skill-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .skill-icon:hover {
+            transform: scale(1.1);
+            color: #fbbf24; /* Tailwind yellow-400 */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <nav class="flex justify-between items-center p-6 bg-gray-800 shadow-lg">
+        <div class="text-2xl font-bold">Mohamed Zaheer</div>
+        <ul class="flex space-x-6">
+            <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+            <li><a href="skills.html" class="hover:text-yellow-400">Skills</a></li>
+            <li><a href="projects.html" class="hover:text-yellow-400">Projects</a></li>
+            <li><a href="education.html" class="hover:text-yellow-400">Education</a></li>
+            <li><a href="certificates.html" class="hover:text-yellow-400">Certificates</a></li>
+            <li><a href="contact.html" class="hover:text-yellow-400">Contact</a></li>
+        </ul>
+        <button id="mode-toggle" class="p-2 bg-gray-700 rounded-lg text-white transition-all hover:bg-gray-600">🌙 Light Mode</button>
+    </nav>
+    
+    <main class="text-center py-16">
+        <h2 class="text-3xl font-bold mb-8">Skills</h2>
+        <p class="text-lg text-gray-400 mb-10">Here are the key skills that I possess to bring creative and efficient solutions to your projects.</p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-6">
+            <!-- HTML Icon -->
+            <div class="relative">
+                <i class="fab fa-html5 text-orange-500 skill-icon text-6xl"></i>
+            </div>
+
+            <!-- CSS Icon -->
+            <div class="relative">
+                <i class="fab fa-css3-alt text-blue-500 skill-icon text-6xl"></i>
+            </div>
+
+            <!-- JavaScript Icon -->
+            <div class="relative">
+                <i class="fab fa-js text-yellow-400 skill-icon text-6xl"></i>
+            </div>
+
+            <!-- PHP Icon -->
+            <div class="relative">
+                <i class="fab fa-php text-indigo-500 skill-icon text-6xl"></i>
+            </div>
+
+            <!-- Database Icon -->
+            <div class="relative">
+                <i class="fas fa-database text-green-500 skill-icon text-6xl"></i>
+            </div>
+
+            <!-- File Icon -->
+            <div class="relative">
+                <i class="fas fa-file-alt text-gray-400 skill-icon text-6xl"></i>
+            </div>
+
+            <!-- Figma Icon -->
+            <div class="relative">
+                <i class="fab fa-figma text-pink-500 skill-icon text-6xl"></i>
+            </div>
+
+        </div>
+    </main>
+    <script>
+        const toggleButton = document.getElementById('mode-toggle');
+        let isLightMode = localStorage.getItem("theme") === "light";
+
+        if (isLightMode) {
+            document.body.classList.add("bg-white", "text-black");
+            document.body.classList.remove("bg-gray-900", "text-white");
+            toggleButton.textContent = "🌞 Dark Mode";
+        }
+
+        toggleButton.addEventListener('click', () => {
+            isLightMode = !isLightMode;
+            if (isLightMode) {
+                document.body.classList.add("bg-white", "text-black");
+                document.body.classList.remove("bg-gray-900", "text-white");
+                toggleButton.textContent = "🌞 Dark Mode";
+                localStorage.setItem("theme", "light");
+            } else {
+                document.body.classList.add("bg-gray-900", "text-white");
+                document.body.classList.remove("bg-white", "text-black");
+                toggleButton.textContent = "🌙 Light Mode";
+                localStorage.setItem("theme", "dark");
+            }
+        });
+    </script>
+</body>
+</html>

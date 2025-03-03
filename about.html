@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Mohamed Zaheer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#FBBF24', // Tailwind yellow-400
+                    }
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <nav class="flex justify-between items-center p-6 bg-gray-800 shadow-lg rounded-lg mb-12">
+        <div class="text-2xl font-bold text-yellow-400">Mohamed Zaheer</div>
+        <ul class="flex space-x-8 text-lg">
+            <li><a href="index.html" class="hover:text-primary">Home</a></li>
+            <li><a href="skills.html" class="hover:text-primary">Skills</a></li>
+            <li><a href="projects.html" class="hover:text-primary">Projects</a></li>
+            <li><a href="contact.html" class="hover:text-primary">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="text-center py-16 px-6">
+        <!-- About Section -->
+        <section class="max-w-4xl mx-auto mb-16">
+            <h2 class="text-4xl font-semibold mb-4">About Me</h2>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
+                Hi! I'm Mohamed Zaheer, a Full-Stack Developer and UI/UX Designer with a passion for creating innovative web applications. I specialize in building seamless, user-friendly digital experiences that bridge the gap between technical functionalities and beautiful design.
+            </p>
+            <div class="flex justify-center gap-12">
+                <div class="flex flex-col items-center text-gray-300">
+                    <h3 class="text-xl font-semibold mb-2">Skills</h3>
+                    <ul class="list-disc list-inside">
+                        <li>JavaScript (React, Node.js)</li>
+                        <li>HTML & CSS (Tailwind CSS)</li>
+                        <li>UI/UX Design & Prototyping</li>
+                        <li>Python & Java</li>
+                        <li>Database Management (PostgreSQL, MongoDB)</li>
+                    </ul>
+                </div>
+                <div class="flex flex-col items-center text-gray-300">
+                    <h3 class="text-xl font-semibold mb-2">Experience</h3>
+                    <ul class="list-disc list-inside">
+                        <li>Freelance Full-Stack Developer</li>
+                        <li>UI/UX Design for Mobile & Web Apps</li>
+                        <li>Software Development Intern (Company XYZ)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="bg-gray-800 py-8 px-6 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-semibold text-center text-yellow-400 mb-4">Let's Collaborate</h3>
+            <p class="text-lg text-gray-400 mb-6 text-center">
+                If you're interested in collaborating on a project or have any opportunities to discuss, feel free to reach out! I'm always open to new ideas and working with great teams.
+            </p>
+            <div class="text-center">
+                <a href="contact.html" class="bg-primary text-black py-2 px-6 rounded-lg text-xl hover:bg-yellow-500 transition duration-300">Contact Me</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-center py-4 mt-12">
+        <p class="text-gray-400">&copy; 2025 Mohamed Zaheer | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

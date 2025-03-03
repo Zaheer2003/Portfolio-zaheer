@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <nav class="flex justify-between items-center p-6 bg-gray-800 shadow-lg">
+        <div class="text-2xl font-bold">Mohamed Zaheer</div>
+        <ul class="flex space-x-6">
+            <li><a href="index.html" class="hover:text-yellow-400">Home</a></li>
+            <li><a href="skills.html" class="hover:text-yellow-400">Skills</a></li>
+            <li><a href="projects.html" class="hover:text-yellow-400">Projects</a></li>
+            <li><a href="education.html" class="hover:text-yellow-400">Education</a></li>
+            <li><a href="certificates.html" class="hover:text-yellow-400">Certificates</a></li>
+            <li><a href="contact.html" class="hover:text-yellow-400">Contact</a></li>
+        </ul>
+        <button id="mode-toggle" class="p-2 bg-gray-700 rounded-lg text-white transition-all hover:bg-gray-600">🌙 Light Mode</button>
+    </nav>
+
+    <main class="flex flex-col items-center text-center py-16">
+        <h2 class="text-3xl font-bold">Contact Me</h2>
+        <p class="text-gray-400 mt-2">Feel free to reach out for collaborations or inquiries.</p>
+
+        <section class="mt-6 p-6 bg-gray-800 rounded-lg shadow-lg w-full max-w-2xl">
+            <form class="space-y-4">
+                <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 bg-gray-900 rounded-lg border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 bg-gray-900 rounded-lg border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                <textarea name="message" rows="5" placeholder="Your Message" required class="w-full p-3 bg-gray-900 rounded-lg border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+                <button type="submit" class="w-full p-3 bg-yellow-500 hover:bg-yellow-600 transition-all rounded-lg font-bold text-black">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const toggleButton = document.getElementById('mode-toggle');
+        let isLightMode = localStorage.getItem("theme") === "light";
+
+        if (isLightMode) {
+            document.body.classList.add("bg-white", "text-black");
+            document.body.classList.remove("bg-gray-900", "text-white");
+            toggleButton.textContent = "🌞 Dark Mode";
+        }
+
+        toggleButton.addEventListener('click', () => {
+            isLightMode = !isLightMode;
+            if (isLightMode) {
+                document.body.classList.add("bg-white", "text-black");
+                document.body.classList.remove("bg-gray-900", "text-white");
+                toggleButton.textContent = "🌞 Dark Mode";
+                localStorage.setItem("theme", "light");
+            } else {
+                document.body.classList.add("bg-gray-900", "text-white");
+                document.body.classList.remove("bg-white", "text-black");
+                toggleButton.textContent = "🌙 Light Mode";
+                localStorage.setItem("theme", "dark");
+            }
+        });
+    </script>
+</body>
+</html>
